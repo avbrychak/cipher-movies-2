@@ -1,0 +1,17 @@
+<div class="header">
+  <% if signed_in? %>
+    Hello <%= current_user.email %> <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+  <% else %>
+    <%= link_to 'Log in', new_user_session_path %>
+  <% end %>
+</div>
+<div class="content">
+  <input id="search" type="text" placeholder="search">
+  <select id="search_type">
+    <option value="movieArtist"> Artist</option>
+    <option value="movie">Movie</option>
+  </select>
+  <button id="search-btn">Search</button>
+</div>
+<div id="results">
+</div>
